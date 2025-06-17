@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Image Analyzer</title>
+</head>
+<body>
+    <h1>🖼️ Image Analyzer</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if image_path %}
+        <h2>Uploaded Image:</h2>
+        <img src="{{ image_path }}" width="300">
+
+        <h3>Details:</h3>
+        <ul>
+            <li><b>Format:</b> {{ format }}</li>
+            <li><b>Size:</b> {{ size }}</li>
+            <li><b>Mode:</b> {{ mode }}</li>
+        </ul>
+
+        <h3>Color Histogram:</h3>
+        <img src="{{ hist_path }}" width="500">
+    {% endif %}
+</body>
+</html>
