@@ -1,0 +1,4 @@
+# genaipractice01
+This is an image analyzer tool .
+Use python app.py 
+to execute the code.
